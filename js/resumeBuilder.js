@@ -15,7 +15,7 @@ var bio = {
     "email" : "jess.fortino@gmail.com",
     "github" : "jess-fortino",
     "twitter" : "@jess4tno",
-    "location" : "Pittsburgh"
+    "location" : "Pittsburgh, PA"
   },
   "bio pic" : "images/fry.jpg",
   "Welcome Message" : "This is the welcome message.",
@@ -23,6 +23,20 @@ var bio = {
     "HTML", "CSS", "JavaScript", "jQuery", "JSON", "Adobe Suite"
   ]
 };
+
+// function displayBio(){
+//   for(lists in bio.contacts){
+//     $("#header").append(HTMLcontactGeneric)
+//     var formattedMobile = HTMLmobile.replace("%data%", bio.contacts[lists].mobile);
+//     $("#header").append(formattedMobile);
+//     var formattedEmail = HTMLemail.replace("%data%", bio.contacts[lists].email);
+//     $("#header").append(HTMLemail);
+//     var formattedGitHub = HTMLgithub.replace("%data%", bio.contacts[lists].github);
+//     var formattedTwitter = HTMLtwitter.replace("%data%", bio.contacts[lists].twitter);
+//     var formattedLocation = HTMLlocation.replace("%data%", bio.contacts[lists].location);
+//   }
+// }
+// displayBio();
 
 var work = {
   "jobs": [
@@ -36,7 +50,14 @@ var work = {
     {
       "employer": "PA Leadership Charter School",
       "title": "Guidance Assistant",
-      "dates": "April 2012 - November 2014",
+      "dates": "April 2013 - November 2014",
+      "location": "Pittsburgh, PA",
+      "description": " You were only supposed to blow the bloody doors off. you're only supposed to blow the bloody doors off! at this point, i'd set you up with a chimpanzee if it'd brought you back to the world! jasper: your baby is the miracle the whole world has been waiting for. my lord! you're a tripod. yes, i used a machine gun. you are as precious to me as you were to your own mother and father. i swore to them that i would protect you, and i haven't. you know, your bobby dangler, giggle stick, your general-two-colonels, master of ceremonies... yeah, don't be shy, let's have a look. it's not the size mate, it's how you use it. when i get back, remind to tell you about the time i took 100 nuns to nairobi! pull my finger!"
+    },
+    {
+      "employer": "PA Leadership Charter School",
+      "title": "Receptionist",
+      "dates": "August 2011 - April 2013",
       "location": "Pittsburgh, PA",
       "description": " You were only supposed to blow the bloody doors off. you're only supposed to blow the bloody doors off! at this point, i'd set you up with a chimpanzee if it'd brought you back to the world! jasper: your baby is the miracle the whole world has been waiting for. my lord! you're a tripod. yes, i used a machine gun. you are as precious to me as you were to your own mother and father. i swore to them that i would protect you, and i haven't. you know, your bobby dangler, giggle stick, your general-two-colonels, master of ceremonies... yeah, don't be shy, let's have a look. it's not the size mate, it's how you use it. when i get back, remind to tell you about the time i took 100 nuns to nairobi! pull my finger!"
     }
@@ -44,19 +65,20 @@ var work = {
 }
 function displayWork(){
   for(job in work.jobs){
-  $("#workExperience").append(HTMLworkStart);
+    $("#workExperience").append(HTMLworkStart);
     var formattedEmployer = HTMLworkEmployer.replace("%data%", work.jobs[job].employer);
     var formattedTitle = HTMLworkTitle.replace("%data%", work.jobs[job].title);
     var formattedEmployerTitle = formattedEmployer + formattedTitle;
     $(".work-entry:last").append(formattedEmployerTitle);
     var formattedDates = HTMLworkDates.replace("%data%", work.jobs[job].dates);
     $(".work-entry:last").append(formattedDates);
-    var formattedLocation = HTMLworkLocation.replace("%data%", work.jobs[job].location);
-    $(".work-entry:last").append(formattedLocation);
+    var formattedWorkLocation = HTMLworkLocation.replace("%data%", work.jobs[job].location);
+    $(".work-entry:last").append(formattedWorkLocation);
     var formattedDescription = HTMLworkDescription.replace("%data%", work.jobs[job].description);
     $(".work-entry:last").append(formattedDescription);
 }
 }
+displayWork();
 
 var education={
   "schools":[
@@ -107,6 +129,34 @@ if(bio.skills.length > 0){
   formattedSkill = HTMLskills.replace("%data%", bio.skills[5]);
   $("#skills").append(formattedSkill);
 }
+
+function inName(name){
+  name = name.trim().split(" ");
+  console.log(name);
+  name[1] = name[1].toUpperCase();
+  name[0] = name[0].slice(0,1).toUpperCase() + name[0].slice(1).toLowerCase();
+
+  return name[0] + " " + name[1];
+}
+$("#main").append(internationalizeButton);
+
+
+// function locationizer(work_obj){
+//   var locationArray = [];
+//
+//   for (job in work_obj.jobs){
+//     var newLocation = work_obj.jobs[job].location;
+//     locationArray.push(newLocation);
+//   }
+//   return locationArray;
+// }
+
+$(document).click(function(loc){
+  var x = loc.pageX;
+  var y = loc.pageY;
+
+  logClicks(x,y);
+});
 
 // var cameron ={};
 // cameron.job = "course dev";
