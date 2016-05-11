@@ -135,14 +135,14 @@ var education={
   "schools":[
     {
       "Name" : "Udacity",
-      "Location": "Pittsburgh, PA or Online",
+      "location": "Pittsburgh, PA",
       "Major": "Web Development",
       "Dates" : "2016 - Present",
       "Degree" : "Nanodegree, Web Development"
     },
     {
       "Name" : "Clarion University",
-      "Location": "Clarion, PA, US",
+      "location": "Clarion, PA",
       "Major": "History",
       "Dates" : "2009 - 2011",
       "Degree" : " "
@@ -153,7 +153,7 @@ var education={
       "Title" : "Udacity",
       "School" : "Udacity",
       "Dates" : "03/16 - Present",
-      "Location" : "Online",
+      "location" : "Online",
       "Major" : "Web Development"
     },
     {
@@ -171,6 +171,7 @@ var education={
       "Major" : "Web Development"
     }
   ]
+
 }
 
 education.display = function(){
@@ -180,14 +181,14 @@ education.display = function(){
     var formattedSchoolName = HTMLschoolName.replace("%data%", education.schools[school].Name);
     $(".education-entry:last").append(formattedSchoolName);
 
-    var formattedSchoolLocation  = HTMLschoolLocation.replace("%data%", education.schools[school].Location);
+    var formattedSchoolLocation  = HTMLschoolLocation.replace("%data%", education.schools[school].location);
     $(".location-text:last").append(formattedSchoolLocation);
 
     var formattedSchoolMajor = HTMLschoolMajor.replace("%data%", education.schools[school].Major)
     $(".education-entry:last").append(formattedSchoolMajor);
 
     var formattedSchoolDates = HTMLschoolDates.replace("%data%", education.schools[school].Dates);
-    $(".location-text:last").append(formattedSchoolDates);
+    $(".date-text:last").append(formattedSchoolDates);
 
     var formattedSchoolDegree = HTMLschoolDegree.replace("%data%", education.schools[school].Degree);
     $(".education-entry:last").append(formattedSchoolDegree);
@@ -252,7 +253,7 @@ function inName(name){
 }
 $("#main").append(internationalizeButton);
 
-
+$("#mapDiv").append(googleMap);
 
 // function locationizer(work_obj){
 //   var locationArray = [];
