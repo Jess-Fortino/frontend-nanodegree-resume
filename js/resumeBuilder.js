@@ -49,10 +49,10 @@ function displayBio(){
   $("#header").prepend(formattedName);
 
   var formattedWelcomeMessage = HTMLwelcomeMsg.replace("%data%", bio.WelcomeMessage);
-  $(".welcome-message").append(formattedWelcomeMessage);
+  $("#header").append(formattedWelcomeMessage);
 
-  var formattedBioPic = HTMLbioPic.replace("%data", bio.biopic);
-  $(".biopic:").append(formattedBioPic);
+  var formattedBioPic = HTMLbioPic.replace("%data%", bio.biopic);
+  $("#header").append(formattedBioPic);
 
   var formattedMobile = HTMLmobile.replace("%data%", bio.contacts.mobile);
   $("#topContacts").append(formattedMobile);
@@ -83,6 +83,7 @@ function displayBio(){
     $("#skills").append(formattedSkill);
   }
 }
+
 displayBio();
 
 
@@ -126,7 +127,7 @@ function displayWork(){
     $(".work-entry:last").append(formattedWorkLocation);
     var formattedDescription = HTMLworkDescription.replace("%data%", work.jobs[job].description);
     $(".work-entry:last").append(formattedDescription);
-}
+  }
 }
 displayWork();
 
@@ -136,15 +137,70 @@ var education={
       "Name" : "Udacity",
       "Location": "Pittsburgh, PA or Online",
       "Major": "Web Development",
-      "Graduation" : "2016, Nanodegree"
+      "Dates" : "2016 - Present",
+      "Degree" : "Nanodegree, Web Development"
     },
     {
       "Name" : "Clarion University",
       "Location": "Clarion, PA, US",
-      "Major": "Web Development"
+      "Major": "History",
+      "Dates" : "2009 - 2011",
+      "Degree" : " "
+    }
+  ],
+  "classes":[
+    {
+      "Title" : "Udacity",
+      "School" : "Udacity",
+      "Dates" : "03/16 - Present",
+      "Location" : "Online",
+      "Major" : "Web Development"
+    },
+    {
+      "Title" : "Code Academy",
+      "School" : "Code Academy",
+      "Dates" : "02/16 - Present",
+      "Location" : "Online",
+      "Major" : "Web Development"
+    },
+    {
+      "Title" : "edX",
+      "School" : "edX",
+      "Dates" : "6/14 - 6/15",
+      "Location" : "Online",
+      "Major" : "Web Development"
     }
   ]
 }
+
+education.display = function(){
+  for (school in education.schools){
+    $("#education").append(HTMLschoolStart);
+
+    var formattedSchoolName = HTMLschoolName.replace("%data%", education.schools[school].Name);
+    $(".education-entry:last").append(formattedSchoolName);
+
+    var formattedSchoolLocation  = HTMLschoolLocation.replace("%data%", education.schools[school].Location);
+    $(".location-text:last").append(formattedSchoolLocation);
+
+    var formattedSchoolMajor = HTMLschoolMajor.replace("%data%", education.schools[school].Major)
+    $(".education-entry:last").append(formattedSchoolMajor);
+
+    var formattedSchoolDates = HTMLschoolDates.replace("%data%", education.schools[school].Dates);
+    $(".location-text:last").append(formattedSchoolDates);
+
+    var formattedSchoolDegree = HTMLschoolDegree.replace("%data%", education.schools[school].Degree);
+    $(".education-entry:last").append(formattedSchoolDegree);
+  }
+  // for(online in classes.education){
+  //   $().append(HTMLonlineClasses);
+  // }
+}
+education.display();
+
+
+
+
 
 var projects={
   "projects":[
