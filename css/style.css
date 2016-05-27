@@ -119,6 +119,10 @@ a:hover {
   color: #668cff;
 }
 
+.white {
+  color: #fff;
+}
+
 .white-text {
   font-weight: bold;
   color: #fff;
