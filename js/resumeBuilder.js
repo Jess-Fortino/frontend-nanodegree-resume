@@ -15,7 +15,7 @@ var bio = {
     "HTML", "CSS", "JavaScript", "jQuery", "JSON", "Adobe Suite"
   ]
 };
-
+//displays bio and footer contacts
 function displayBio(){
   var formattedName = HTMLheaderName.replace("%data%", bio.name);
   var formattedRole = HTMLheaderRole.replace("%data%", bio.role);
@@ -30,14 +30,24 @@ function displayBio(){
 
   var formattedMobile = HTMLmobile.replace("%data%", bio.contacts.mobile);
   $("#topContacts").append(formattedMobile);
+  $("#footerContacts").append(formattedMobile);
+
   var formattedEmail = HTMLemail.replace("%data%", bio.contacts.email);
   $("#topContacts").append(formattedEmail);
+  $("#footerContacts").append(formattedEmail);
+
   var formattedGitHub = HTMLgithub.replace("%data%", bio.contacts.github);
   $("#topContacts").append(formattedGitHub);
+  $("#footerContacts").append(formattedGitHub);
+
   var formattedTwitter = HTMLtwitter.replace("%data%", bio.contacts.twitter);
   $("#topContacts").append(formattedTwitter);
+  $("#footerContacts").append(formattedTwitter);
+
   var formattedBlog = HTMLblog.replace("%data%", bio.contacts.blog);
   $("#topContacts").append(formattedBlog);
+  $("#footerContacts").append(formattedBlog);
+
   var formattedLocation = HTMLlocation.replace("%data%", bio.contacts.location);
   $("#topContacts").append(formattedLocation);
 
@@ -238,7 +248,6 @@ function inName(name){
 $("#mapDiv").append(googleMap);
 
 $("#main").append(internationalizeButton);
-
 
 
 // function locationizer(work_obj){
