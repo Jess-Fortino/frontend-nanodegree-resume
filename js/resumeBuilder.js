@@ -1,8 +1,3 @@
-/*
-This is empty on purpose! Your code to build the resume will go here.
- */
-
-
 var bio = {
   "name" : "Jessica Fortino",
   "role" : "Web Developer",
@@ -21,27 +16,6 @@ var bio = {
   ]
 };
 
-// bio.display = function(){
-//   for(contact in bio.contacts){
-//     $("#topContacts").append(HTMLcontactGeneric);
-//
-//     var formattedMobile = HTMLmobile.replace("%data%", bio.contacts.mobile);
-//     $("#topContacts").append(formattedMobile);
-//
-//     var formattedEmail = HTMLemail.replace("%data%", bio.contacts.email);
-//     $("#topContacts").append(HTMLemail);
-//
-//     var formattedGitHub = HTMLgithub.replace("%data%", bio.contacts.github);
-//     $("#topContacts").append(HTMLgithub);
-//
-//     var formattedTwitter = HTMLtwitter.replace("%data%", bio.contacts.twitter);
-//     $("#topContacts").append(formattedTwitter);
-//
-//     var formattedLocation = HTMLlocation.replace("%data%", bio.contacts.location);
-//     $("#topContacts").append(formattedLocation);
-//   }
-// };
-// bio.display();
 function displayBio(){
   var formattedName = HTMLheaderName.replace("%data%", bio.name);
   var formattedRole = HTMLheaderRole.replace("%data%", bio.role);
@@ -83,11 +57,7 @@ function displayBio(){
     $("#skills").append(formattedSkill);
   }
 }
-
 displayBio();
-
-
-
 
 var work = {
   "jobs": [
@@ -171,7 +141,6 @@ var education={
       "Url" : "www.edx.org"
     }
   ]
-
 }
 
 education.display = function(){
@@ -194,8 +163,8 @@ education.display = function(){
     $(".education-entry:last").append(formattedSchoolDegree);
   }
 
-  $("#education").append(HTMLonlineStart);
   $("#education").append(HTMLonlineClasses);
+  $("#education").append(HTMLonlineStart);
 
   for (onlineCourse in education.onlineClasses){
 
