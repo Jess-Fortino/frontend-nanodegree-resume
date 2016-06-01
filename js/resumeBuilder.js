@@ -10,7 +10,7 @@ var bio = {
     "location" : "Pittsburgh, PA"
   },
   "biopic" : "images/fry.jpg",
-  "WelcomeMessage" : "This is the welcome message.",
+  "WelcomeMessage" : "This is the welcome message. This is still the welcome message.",
   "skills" : [
     "HTML", "CSS", "JavaScript", "jQuery", "JSON", "Adobe Suite"
   ]
@@ -76,21 +76,21 @@ var work = {
       "title": "Marketing Assistant",
       "dates": "November 2014 - Present",
       "location" : "Pittsburgh, PA",
-      "description": " You were only supposed to blow the bloody doors off. you're only supposed to blow the bloody doors off! at this point, i'd set you up with a chimpanzee if it'd brought you back to the world! jasper: your baby is the miracle the whole world has been waiting for. my lord! you're a tripod. yes, i used a machine gun. you are as precious to me as you were to your own mother and father. i swore to them that i would protect you, and i haven't. you know, your bobby dangler, giggle stick, your general-two-colonels, master of ceremonies... yeah, don't be shy, let's have a look. it's not the size mate, it's how you use it. when i get back, remind to tell you about the time i took 100 nuns to nairobi! pull my finger!"
+      "description": " Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam quis dictum augue, in pellentesque odio. Aenean quis bibendum urna, sed vestibulum ante. Pellentesque blandit luctus nunc, at tincidunt sem iaculis rutrum. Nulla eu volutpat urna. Nunc cursus velit erat, non tincidunt ipsum semper quis. Praesent euismod nibh vitae quam auctor, eu venenatis odio commodo. Quisque orci massa, eleifend in ante non, blandit aliquet dui. Nulla feugiat magna sit amet bibendum ullamcorper. Fusce finibus massa eu vestibulum luctus. Duis rutrum, odio nec suscipit tristique, metus est pellentesque nibh, vel pulvinar velit turpis et urna."
     },
     {
       "employer": "PA Leadership Charter School",
       "title": "Guidance Assistant",
       "dates": "April 2013 - November 2014",
       "location": "Pittsburgh, PA",
-      "description": " You were only supposed to blow the bloody doors off. you're only supposed to blow the bloody doors off! at this point, i'd set you up with a chimpanzee if it'd brought you back to the world! jasper: your baby is the miracle the whole world has been waiting for. my lord! you're a tripod. yes, i used a machine gun. you are as precious to me as you were to your own mother and father. i swore to them that i would protect you, and i haven't. you know, your bobby dangler, giggle stick, your general-two-colonels, master of ceremonies... yeah, don't be shy, let's have a look. it's not the size mate, it's how you use it. when i get back, remind to tell you about the time i took 100 nuns to nairobi! pull my finger!"
+      "description": " Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam quis dictum augue, in pellentesque odio. Aenean quis bibendum urna, sed vestibulum ante. Pellentesque blandit luctus nunc, at tincidunt sem iaculis rutrum. Nulla eu volutpat urna. Nunc cursus velit erat, non tincidunt ipsum semper quis. Praesent euismod nibh vitae quam auctor, eu venenatis odio commodo. Quisque orci massa, eleifend in ante non, blandit aliquet dui. Nulla feugiat magna sit amet bibendum ullamcorper. Fusce finibus massa eu vestibulum luctus. Duis rutrum, odio nec suscipit tristique, metus est pellentesque nibh, vel pulvinar velit turpis et urna."
     },
     {
       "employer": "PA Leadership Charter School",
       "title": "Receptionist",
       "dates": "August 2011 - April 2013",
       "location": "Pittsburgh, PA",
-      "description": " You were only supposed to blow the bloody doors off. you're only supposed to blow the bloody doors off! at this point, i'd set you up with a chimpanzee if it'd brought you back to the world! jasper: your baby is the miracle the whole world has been waiting for. my lord! you're a tripod. yes, i used a machine gun. you are as precious to me as you were to your own mother and father. i swore to them that i would protect you, and i haven't. you know, your bobby dangler, giggle stick, your general-two-colonels, master of ceremonies... yeah, don't be shy, let's have a look. it's not the size mate, it's how you use it. when i get back, remind to tell you about the time i took 100 nuns to nairobi! pull my finger!"
+      "description": " Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam quis dictum augue, in pellentesque odio. Aenean quis bibendum urna, sed vestibulum ante. Pellentesque blandit luctus nunc, at tincidunt sem iaculis rutrum. Nulla eu volutpat urna. Nunc cursus velit erat, non tincidunt ipsum semper quis. Praesent euismod nibh vitae quam auctor, eu venenatis odio commodo. Quisque orci massa, eleifend in ante non, blandit aliquet dui. Nulla feugiat magna sit amet bibendum ullamcorper. Fusce finibus massa eu vestibulum luctus. Duis rutrum, odio nec suscipit tristique, metus est pellentesque nibh, vel pulvinar velit turpis et urna."
     }
   ]
 }
@@ -134,21 +134,21 @@ var education={
       "School" : "Udacity",
       "Dates" : "03/16 - Present",
       "Major" : "Web Development",
-      "Url" : "www.udcaity.com"
+      "Url" : "https://www.udcaity.com"
     },
     {
       "Title" : "Code Academy",
       "School" : "Code Academy",
       "Dates" : "02/16 - Present",
       "Major" : "Web Development",
-      "Url" : "www.codeacademy.com"
+      "Url" : "https://www.codeacademy.com"
     },
     {
       "Title" : "edX",
       "School" : "edX",
       "Dates" : "6/14 - 6/15",
       "Major" : "Web Development",
-      "Url" : "www.edx.org"
+      "Url" : "https://www.edx.org"
     }
   ]
 }
@@ -179,16 +179,20 @@ education.display = function(){
   for (onlineCourse in education.onlineClasses){
 
     var formattedOnlineTitle = HTMLonlineTitle.replace("%data%", education.onlineClasses[onlineCourse].Title);
-    $(".online-entry").append(formattedOnlineTitle);
+    //$(".online-entry").append(formattedOnlineTitle);
 
     var formattedOnlineSchool = HTMLonlineSchool.replace("%data%", education.onlineClasses[onlineCourse].School);
-    $(".online-entry").append(formattedOnlineSchool);
+    //$(".online-entry").append(formattedOnlineSchool);
+
+     var formattedOnline = formattedOnlineTitle + formattedOnlineSchool;
+
+    $(".online-entry").append(formattedOnline);
 
     var formattedOnlineDates = HTMLonlineDates.replace("%data%", education.onlineClasses[onlineCourse].Dates);
     $(".online-entry").append(formattedOnlineDates);
 
-    // var formattedOnlineURL = HTMLonlineURL.replace("%data%". education.onlineClasses[onlineCourse].Url);
-    // $(".online-entry").append(formattedOnlineURL);
+    var formattedOnlineURL = HTMLonlineURL.replace("%data%", education.onlineClasses[onlineCourse].Url);
+    $(".online-entry").append(formattedOnlineURL);
   };
 }
 education.display();
