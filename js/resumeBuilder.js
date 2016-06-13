@@ -96,14 +96,14 @@ var education = {
     "schools": [{
         "name": "Udacity",
         "location": "Pittsburgh, PA",
-        "majors": "Web Development",
+        "majors":["Web Development"],
         "dates": "2016 - Present",
         "degree": "Nanodegree, Web Development",
         "url" : "https://www.udacity.com"
     }, {
         "name": "Clarion University",
         "location": "Clarion, PA",
-        "majors": "History",
+        "majors":["History"],
         "dates": "2009 - 2011",
         "degree": " ",
         "url" : "https://www.clarion.edu"
@@ -142,8 +142,9 @@ education.display = function() {
         var formattedSchoolDates = HTMLschoolDates.replace("%data%", education.schools[school].dates);
         $(".education-entry:last").append(formattedSchoolDates);
 
-        var formattedSchoolMajor = HTMLschoolMajor.replace("%data%", education.schools[school].majors);
-        $(".education-entry:last").append(formattedSchoolMajor);
+        if (education.schools[school].majors.length > 0) {
+                var formattedSchoolMajor = HTMLschoolMajor.replace("%data%", education.schools[school].majors);
+                $(".education-entry:last").append(formattedSchoolMajor)};
 
         var formattedSchoolDegree = HTMLschoolDegree.replace("%data%", education.schools[school].degree);
         $(".education-entry:last").append(formattedSchoolDegree);
