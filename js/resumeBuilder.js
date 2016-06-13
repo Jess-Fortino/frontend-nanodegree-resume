@@ -143,8 +143,8 @@ education.display = function() {
         $(".education-entry:last").append(formattedSchoolDates);
 
         if (education.schools[school].majors.length > 0) {
-                var formattedSchoolMajor = HTMLschoolMajor.replace("%data%", education.schools[school].majors);
-                $(".education-entry:last").append(formattedSchoolMajor)};
+            var formattedSchoolMajor = HTMLschoolMajor.replace("%data%", education.schools[school].majors);
+            $(".education-entry:last").append(formattedSchoolMajor)};
 
         var formattedSchoolDegree = HTMLschoolDegree.replace("%data%", education.schools[school].degree);
         $(".education-entry:last").append(formattedSchoolDegree);
